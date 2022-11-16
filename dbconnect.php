@@ -1,6 +1,6 @@
 <?php
 $host='localhost';
-$db = 'ADISE22_DB';
+$db = 'ADISE22_Pinacle_DB';
 require_once "db_upass.php";
 
 $user=$DB_USER;
