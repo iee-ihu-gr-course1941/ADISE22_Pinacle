@@ -66,7 +66,7 @@ ENGINE=InnoDB
 ;
 
 -- Dumping data for table chess.board_empty: ~64 rows (approximately)
-INSERT INTO `deck_empty` (`x`, `y`, `b_color`, `piece_color`, `piece`) VALUES
+INSERT INTO `deck_empty` (`number`, `shape`, `location`) VALUES
 	('A', 'spades', NULL),
 	('A', 'hearts', NULL),
 	('A', 'diamonds', NULL),
@@ -92,12 +92,12 @@ INSERT INTO `deck_empty` (`x`, `y`, `b_color`, `piece_color`, `piece`) VALUES
 	('9', 'diamonds', NULL),
 	('9', 'clubs', NULL);
 
--- Dumping structure for procedure chess.clean_board
-DROP PROCEDURE IF EXISTS `clean_board`;
+-- Dumping structure for procedure chess.clean_deck
+DROP PROCEDURE IF EXISTS `clean_deck`;
 DELIMITER //
-CREATE PROCEDURE `clean_board`()
+CREATE PROCEDURE `clean_deck`()
 BEGIN
-	REPLACE INTO board SELECT * FROM board_empty;
+	REPLACE INTO deck SELECT * FROM deck_empty;
 END//
 DELIMITER ;
 
@@ -113,9 +113,6 @@ COLLATE='utf8mb4_general_ci'
 ENGINE=InnoDB
 ;
 
--- Dumping data for table chess.game_status: ~0 rows (approximately)
-INSERT INTO `game_status` (`status`, `p_turn`, `result`, `last_change`) VALUES
-	('started', 'W', 'D', '2022-11-28 18:39:59');
 
 DELIMITER;
 
