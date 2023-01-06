@@ -4,7 +4,7 @@
 function show_piece($x,$y) {
 	global $mysqli;
 	
-	$sql = 'select * from board where x=? and y=?';
+	$sql = 'select * from deck where number=? and shape=?';
 	$st = $mysqli->prepare($sql);
 	$st->bind_param('ii',$x,$y);
 	$st->execute();
