@@ -1,6 +1,7 @@
 <?php
 
 require_once "../lib/dbconnect.php"; 
+require_once "../lib/users.php";
 
 
 
